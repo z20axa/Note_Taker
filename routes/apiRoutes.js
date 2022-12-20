@@ -16,7 +16,7 @@ router.post('/notes', (req, res) => {
         data.push({ ...req.body });
         console.log(data);
         // return fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(data), (err) => {
-        //     err ? console.error(err) : console.log("File Written!");
+        //     err ? console.error(err) : consgit ole.log("File Written!");
         //     return res.status(200).json(req.body);
     //     // });
     // }
