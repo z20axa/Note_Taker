@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const data = require('../db/db.json');
+var data = require('../db/db.json');
 const fs = require('fs');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
@@ -24,18 +24,20 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-    // console.log('Request', req);
-    // console.log('Response', res);
-    console.log('Request Body', req.body);
+    const id = req.params.id;
+    // console.log('ID', id);
 
-    // fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(data), (err) => {
-    //     if (err) {
-    //         console.error(err);
-    //         res.status(500).send("Error!");
-    //     } else {
-    //         res.status(200).json(req.body);
-    //     }
-    // });
+    data = data.filter((idReq) => idReq.id !== id);
+        // console.log(data);
+
+    fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(data), (err) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send("Error!");
+        } else {
+            res.status(200).json(data);
+        }
+    });
 });
 
 module.exports = router;

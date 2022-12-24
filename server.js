@@ -18,8 +18,6 @@ app.use('/', htmlRoutes);
 //   res.send("Homepage");
 // });
 
-
-
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}/`);
 });
