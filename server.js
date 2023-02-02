@@ -4,7 +4,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
 const app = express();
-const PORT = 4001;
+const PORT = process.env.PORT || 4001;
 
 // body parsing
 app.use(express.json());
