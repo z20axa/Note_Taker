@@ -34,6 +34,8 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ## Technologies Used
 
 - [Express.js](http://expressjs.com/)
+- [File System](https://nodejs.org/api/fs.html#fs_file_system)
+- [ID generator uuid4](https://www.uuidgenerator.net/version4)
 
 ## App Deployed Heruko Link
 
