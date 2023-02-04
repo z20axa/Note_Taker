@@ -49,4 +49,3 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ![Capture3](./public/images/Web_capture_4-2-2023_161425_note-taker-z20axa.herokuapp.com.jpeg)
 ![Capture4](./public/images/Web_capture_4-2-2023_161713_note-taker-z20axa.herokuapp.com.jpeg)
 ![Capture5](./public/images/Web_capture_4-2-2023_161726_note-taker-z20axa.herokuapp.com.jpeg)
-
