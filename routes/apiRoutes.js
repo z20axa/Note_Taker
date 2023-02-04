@@ -1,6 +1,6 @@
 // packages and modules import
 const router = require('express').Router(); // express router
-var data = require('../db/db.json'); // notes JSON data array
+var data = require('../db/db.json'); // notes JSON data file
 const fs = require('fs'); // file system to write notes
 const path = require('path'); // path package
 const { v4: uuidv4 } = require('uuid'); // id generator for note
@@ -18,7 +18,7 @@ router.post('/notes', (req, res) => {
     // add new note entered to the note data array and assign a generated unique id 
     data.push({ ...req.body, id: uuidv4()});
 
-    // write new note to the note data array
+    // write new note to the note data file
     fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(data), (err) => {
         if (err) {
             console.error(err);
@@ -40,7 +40,7 @@ router.delete('/notes/:id', (req, res) => {
     // filter/look the note data array by its id and deletes it from the notes
     data = data.filter((idReq) => idReq.id !== id);
 
-    // write new note to the note data array excluding the note deleted
+    // write new note to the note data file excluding the note deleted
     fs.writeFile(path.join(__dirname, "../db/db.json"), JSON.stringify(data), (err) => {
         if (err) {
             console.error(err);
