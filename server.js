@@ -14,10 +14,6 @@ app.use(express.static('public'));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-// app.get('/', (req, res) => {
-//   res.send("Homepage");
-// });
-
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}/`);
 });
