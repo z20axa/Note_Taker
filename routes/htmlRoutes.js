@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const path = require('path');
 
-// GET route to get all of the notes
+// GET route to get/display all of the notes
 router.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"));
 });
